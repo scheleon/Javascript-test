@@ -1,6 +1,11 @@
 var form = document.getElementById("user-form")
 var totalCount = 0
 
+function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+
 function handleForm(event) {
     event.preventDefault()
 } 
@@ -29,12 +34,22 @@ function insertIntoTable(data, tableRef) {
 
 document.getElementById("submit").addEventListener("click", async function(){
     tableRef = document.getElementById('users')
+
+    var name = document.getElementById('name').value
+    var email = document.getElementById('email').value
+
+    if(name === ''){
+        alert("Name cannot be empty")
+        return
+    } else if(email === '' || !validateEmail(email)){
+        alert("Invalid email")
+        return
+    }
+
     if(totalCount === 0) {
         tableRef.deleteRow(-1)
     }
 
-    var name = document.getElementById('name').value
-    var email = document.getElementById('email').value
     data = {
         name: name,
         email: email
