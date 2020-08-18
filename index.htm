@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+<body>
+    <div id="result-box">
+        <div id="result">
+            <table id="users">
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td colspan='3' style='text-align: center;'>NO DATA</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="center-button-area">
+        <div class="center-button-box">
+            <button id="add-user">Add User</button>
+        </div>
+    </div>
+
+    <div class="centered-form">
+        <div class="centered-form__box" id="user-form-box" style="visibility: hidden;">
+            <h1>USER-FORM</h1>
+            <form id="user-form" onsubmit="return false">
+                <label>Name</label>
+                <input id="name" type="text" id="name" placeholder="Alex" required>
+                <label>Email</label>
+                <input id="email" type="email">
+                <button id="submit" type="submit">find</button> 
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+
+<script type="application/javascript" src='./js/script.js' ></script>
+
+</html>
